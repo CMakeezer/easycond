@@ -9,9 +9,9 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include(CXXFeatures)
 
 if (CMAKE_COMPILER_IS_GNUCC OR (CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
-    add_definitions(-std=gnu++17)
+    add_definitions(-std=gnu++14)
 else()
-    message(FATAL_ERROR "C++17 support is required")
+    message(FATAL_ERROR "C++14 support is required")
 endif()
 
 check_cxx_if_constexpr()
