@@ -18,17 +18,22 @@
 #ifndef EASYCOND_H_
 #define EASYCOND_H_
 
-#include "config.h"
-
 #include <type_traits>
 #include <iterator>
 #include <functional>
+
+#ifdef __clang__
+#define CXX17_HAS_IF_CONSTEXPR __clang_major__ > 4 || (__clang_major__ == 3 && __clang_minor__ >= 9)
+#elif __GNUG__
+#define CXX17_HAS_IF_CONSTEXPR __GNUC__ >= 7
+#endif
+
 
 namespace EasyCond {
 
 namespace Impl {
 
-#ifdef CXX17_HAS_IF_CONSTEXPR
+#if CXX17_HAS_IF_CONSTEXPR
 template<typename Head, typename ... Tail>
 any()
 {
