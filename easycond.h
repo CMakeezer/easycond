@@ -35,14 +35,14 @@ namespace Impl {
 
 #if CXX17_HAS_IF_CONSTEXPR
 template<typename Head, typename ... Tail>
-any()
+constexpr bool any()
 {
     return Head::value ||
         constexpr(sizeof ... (Tail) == 0) ? false : any<Tail ...>();
 }
 
 template<typename Head, typename ... Tail>
-all()
+constexpr bool all()
 {
     return Head::value ||
         constexpr(sizeof ... (Tail) == 0) ? true : any<Tail ...>();
