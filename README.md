@@ -13,8 +13,10 @@ The goal of EasyCond is to make complex SFINAE expressions better readable by
 hiding some of the "ugly" API.
 
 The idea is to provide type traits similar to [concepts](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=64031),
-since concepts did not make it to C++17, but with a nicer API to have more complex
-traits.
+since concepts did not make it to C++17, but with a slightly nicer API than what
+is currently doable with the standard library to improve readability of complex
+conditions.
+
 
 ## Usage ##
 
@@ -67,4 +69,4 @@ will.
 the type `T` is iterable, i.e. if it has `begin()` and `end()` methods and
 if the resulting iterator has an `operator++()` method.
 
-This detection is not very perfect and will be further improved in the future.
+This detection is not very good and will be further improved in the future.
